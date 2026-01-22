@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hero Video Example</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+  <nav class="side-nav">
+    <a href="#" class="about-btn">ABOUT</a>
+    <a href="gallery.html" class="gallery-btn">GALLERY</a>
+    <a href="#" class="contact-btn">CONTACT</a>
+
+  </nav>
+</header>
+
+
+  <section class="hero">
+  <video 
+    class="hero-video" 
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    preload="auto"
+  >
+    <source src="MainBackground.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Shile</h1>
+    <p>personal work collection.</p>
+  </div>
+  </section>
+
+<div class="floating-orbs">
+  <div class="orb" onclick="location.href='Mandala.html'">
+    <video src="Mandala.mp4" autoplay loop muted playsinline></video>
+    <div class="orb-title">Mandala</div>
+  </div>
+
+  <div class="orb" onclick="location.href='Homogenization.html'">
+    <video src="Homogenization.mp4" autoplay loop muted playsinline></video>
+    <div class="orb-title">Homogenization</div>
+  </div>
+
+  <div class="orb" onclick="location.href='Möbius Strip.html'">
+    <video src="TDMovieOut. (1).mp4" autoplay loop muted playsinline></video>
+    <div class="orb-title">Möbius Strip</div>
+  </div>
+</div>
+
+<script>
+const orbs = document.querySelectorAll('.orb');
+
+orbs.forEach(orb => {
+  const x = Math.random() * 80 + 10;
+  const y = Math.random() * 80 + 10;
+
+  orb.style.left = x + 'vw';
+  orb.style.top = y + 'vh';
+
+// speed
+  const duration = Math.random() * 4 + 4;
+  orb.style.animationDuration = duration + 's';
+});
+</script>
+<!-- about me -->
+<div id="about-overlay"></div>
+
+<div id="about-panel">
+  <div class="about-content">
+    <h2>ABOUT ME</h2>
+    <p>
+      Hi, I'm Shile.<br><br>
+      I am a current student majoring in Digital Art Computing at Goldsmiths University. I am proficient in using  <strong>TouchDesigner</strong> and <strong>Arena </strong>to create immersive digital art works that integrate audio and visuals. <br>
+      Driven by my passion for electronic music, I also utilize <strong>VCV Rack</strong> to produce experimental audio and combine with visual dynamics effect to create real-time interactive experiences.
+      <br><br>
+      I hope this personal portfolio can fully present my creative style, allowing viewers to better understand the concepts and meanings behind the works and generate their own interpretations from them.<br><br>
+      Thank you for your reading, look forward to your evaluation.
+    </p>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutBtn = document.querySelector('.about-btn');
+  const aboutPanel = document.getElementById('about-panel');
+  const aboutOverlay = document.getElementById('about-overlay');
+
+  if (!aboutBtn || !aboutPanel || !aboutOverlay) {
+    console.log('ABOUT elements missing');
+    return;
+  }
+
+  aboutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    aboutPanel.classList.add('open');
+    aboutOverlay.classList.add('visible');
+  });
+
+  aboutOverlay.addEventListener('click', () => {
+    aboutPanel.classList.remove('open');
+    aboutOverlay.classList.remove('visible');
+  });
+});
+</script>
+<!-- contact -->
+<div id="contact-overlay"></div>
+
+<div id="contact-modal">
+  <div class="contact-content">
+    <h2>CONTACT</h2>
+
+    <p>
+      📧 Email：<br>
+      <a href="mailto:shile@email.com">shilechen369@gmail.com</a>
+    </p>
+
+    <p>
+      📞 Phone：<br>
+      <a>+86 137 1003 3154</a>
+    </p>
+
+    <p>
+      📷 Instagram：<br>
+      <a href="https://www.instagram.com/green.shile/" target="_blank">
+        @green.shile
+      </a>
+    </p>
+  </div>
+</div>
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
+

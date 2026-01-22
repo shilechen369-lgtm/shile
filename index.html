@@ -75,6 +75,7 @@ orbs.forEach(orb => {
 
 <div id="about-panel">
   <div class="about-content">
+    <button class="about-close">✕</button>
     <h2>ABOUT ME</h2>
     <p>
       Hi, I'm Shile.<br><br>
@@ -86,29 +87,7 @@ orbs.forEach(orb => {
     </p>
   </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const aboutBtn = document.querySelector('.about-btn');
-  const aboutPanel = document.getElementById('about-panel');
-  const aboutOverlay = document.getElementById('about-overlay');
 
-  if (!aboutBtn || !aboutPanel || !aboutOverlay) {
-    console.log('ABOUT elements missing');
-    return;
-  }
-
-  aboutBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    aboutPanel.classList.add('open');
-    aboutOverlay.classList.add('visible');
-  });
-
-  aboutOverlay.addEventListener('click', () => {
-    aboutPanel.classList.remove('open');
-    aboutOverlay.classList.remove('visible');
-  });
-});
-</script>
 <!-- contact -->
 <div id="contact-overlay"></div>
 
@@ -140,4 +119,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
